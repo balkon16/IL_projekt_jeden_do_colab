@@ -1,6 +1,6 @@
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Embedding, Conv1D, MaxPooling1D, Flatten, LSTM, Dense, Dropout, Conv2D, Bidirectional
-from tensorflow.keras.callbacks import ModelCheckpoint
+from tensorflow.keras.callbacks import ModelCheckpoint, TensorBoard, EarlyStopping
 
 import pickle
 
@@ -51,7 +51,7 @@ history = model.fit(x=dict_to_export['X_tr_tokenized'],
           y=dict_to_export['y_tr'],
           epochs=no_epochs,
           verbose=1,
-          batch_size=175,
+          batch_size=batch_size,
           validation_data=(dict_to_export['X_val_tokenized'], \
                             dict_to_export['y_val']),
           class_weight=dict_to_export['class_weights'],

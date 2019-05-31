@@ -2,5 +2,7 @@ Pomocnicze/
 .ipynb_checkpoints/
 *.txt
 script_models/__pycache__/
-
+Zapasowe/
+pickle*/
+models/
 
